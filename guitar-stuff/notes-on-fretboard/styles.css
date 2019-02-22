@@ -2,15 +2,10 @@
     position: relative;
 }
 
-#fretboard-img {
-    width: 463px;
-    height: 676px;
-}
-
 #dot-img {
     position: absolute;
-    left: 7px;
-    top: 92px;
+    left: 4px;
+    top: 46px;
     width: 25px;
     height: 25px;
     background-color: red;
