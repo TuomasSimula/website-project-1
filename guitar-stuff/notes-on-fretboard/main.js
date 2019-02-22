@@ -32,7 +32,7 @@ document.getElementById('get-random-note').addEventListener('click', () => {getR
 document.getElementById('check-button').addEventListener('click', () => {checkAnswer()});
 
 document.getElementById('note').addEventListener('keypress', (e) => {
-    var key = e.which || e.keyCode;
+    var key = e.which || e.keyCode;
     if (key === 13) {
         checkAnswer();
     }
@@ -41,7 +41,7 @@ document.getElementById('note').addEventListener('keypress', (e) => {
 var currentString, currentFret;
 
 document.getElementById('5-fret-radio').checked = true;
-document.getElementById('all-strings-radio').checked = true;
+document.getElementById('all-strings-radio').checked = true;
 
 getRandNote();
 
@@ -68,7 +68,7 @@ function checkAnswer (){
    
     document.getElementById('note').value = '';
     console.log(notesSharp[index], index);
-    if(ans === notesSharp[index] || ans === notesFlat[index]) {
+    if(ans === notesSharp[index] || ans === notesFlat[index]) {
         document.getElementById('result').innerText = 'Correct!';
         getRandNote();
     } else {
