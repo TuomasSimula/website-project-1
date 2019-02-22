@@ -20,12 +20,12 @@ document.getElementById('5-fret-radio').addEventListener('click', () => {
 
 document.getElementById('all-strings-radio').addEventListener('click', () => {
     maxString = 6;
-    getRandString();
+    getRandNote();
 });
 
 document.getElementById('two-strings-radio').addEventListener('click', () => {
     maxString = 2;
-    getRandString();
+    getRandNote();
 });
 
 document.getElementById('get-random-note').addEventListener('click', () => {getRandNote()});
