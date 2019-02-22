@@ -8,16 +8,33 @@
         <link href="./styles.css" type="text/css" rel="stylesheet">
     </head>
     <body>
+        <form>
+            Amount of frets:
+            <br>
+            <input type="radio" id="5-fret-radio" name="amt-of-frets" value="5" checked="checked"> 5
+            <input type="radio" id="12-fret-radio" name="amt-of-frets" value="12"> 12
+            <br>
+            Strings to use:
+            <br>
+            <input type="radio" id="all-strings-radio" name="strings" value="all" checked="checked"> all
+            <input type="radio" id="two-strings-radio" name="strings" value="two-lowest"> two lowest
+        </form>
 
         <p>Click the button below to get directions to a random position on the fretboard. Type the name of the note into the input box.</p>
         <button type="button" id="get-random-note">random note</button>
+        
         <div id="fretboard-container">
-            <img src="../../images/Fretboard-5.png" id="fretboard-img">
+            <img src="../../images/Fretboard-5.png" id="fretboard-5">
+            <img src="../../images/Fretboard-12.png" id="fretboard-12" style="display:none;">
             <span class="dot" id="dot-img"></span>
         </div>
+
         <form onsubmit="return false">
-            Note: <input type="text" id="note"> <input type="button" id="check-button" value="Check">
+            Note: 
+            <input type="text" id="note"> 
+            <input type="button" id="check-button" value="Check">
         </form>
+
         <p id="result"></p>
         <script src="./main.js" type="text/javascript"></script>
     </body>

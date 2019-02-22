@@ -1,8 +1,36 @@
 const notesSharp = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
 const notesFlat= ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'];
 
+var maxFret = 5, maxString = 6;
+
+document.getElementById('12-fret-radio').addEventListener('click', () => {
+    maxFret = 12;
+    document.getElementById('fretboard-5').style.display = 'none';
+    document.getElementById('fretboard-12').style.display = 'inline';
+    getRandNote();
+});
+
+
+document.getElementById('5-fret-radio').addEventListener('click', () => {
+    maxFret = 5;
+    document.getElementById('fretboard-5').style.display = 'inline';
+    document.getElementById('fretboard-12').style.display = 'none';
+    getRandNote();
+});
+
+document.getElementById('all-strings-radio').addEventListener('click', () => {
+    maxString = 6;
+    getRandString();
+});
+
+document.getElementById('two-strings-radio').addEventListener('click', () => {
+    maxString = 2;
+    getRandString();
+});
+
 document.getElementById('get-random-note').addEventListener('click', () => {getRandNote()});
 document.getElementById('check-button').addEventListener('click', () => {checkAnswer()});
+
 document.getElementById('note').addEventListener('keypress', (e) => {
     var key = e.which || e.keyCode;
     if (key === 13) {
@@ -12,16 +40,24 @@ document.getElementById('note').addEventListener('keypress', (e) => {
 
 var currentString, currentFret;
 
+document.getElementById('5-fret-radio').checked = true;
+document.getElementById('all-strings-radio').checked = true;
+
 getRandNote();
 
 function getRandNote () {
-    currentString = Math.floor(Math.random() * 6);
-    currentFret = Math.floor(Math.random() * 5);
+    var prevString = currentString;
+    var prevFret = currentFret;
+    
+    while(currentString === prevString && currentFret === prevFret) {
+        currentString = Math.floor(Math.random() * maxString);
+        currentFret = Math.floor(Math.random() * maxFret);
+    }
     
     document.getElementById('result').innerText = '';
 
-    document.getElementById('dot-img').style.left = `${7 + currentString * 80}px`;
-    document.getElementById('dot-img').style.top = `${95 + currentFret * 123}px`;
+    document.getElementById('dot-img').style.top = `${407 - currentString * 80}px`;
+    document.getElementById('dot-img').style.left = `${95 + currentFret * 123}px`;
 }
 
 function checkAnswer (){
