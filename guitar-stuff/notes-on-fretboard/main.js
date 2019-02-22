@@ -56,8 +56,8 @@ function getRandNote () {
     
     document.getElementById('result').innerText = '';
 
-    document.getElementById('dot-img').style.top = `${407 - currentString * 80}px`;
-    document.getElementById('dot-img').style.left = `${95 + currentFret * 123}px`;
+    document.getElementById('dot-img').style.top = `${203 - currentString * 40}px`;
+    document.getElementById('dot-img').style.left = `${48 + currentFret * 61}px`;
 }
 
 function checkAnswer (){
