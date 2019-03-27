@@ -23,6 +23,7 @@ document.getElementById('open-strings-radio').addEventListener('click', () => {
     document.getElementById('fretboard-5').style.display = 'inline';
     document.getElementById('fretboard-12').style.display = 'none';
     getRandNote();
+});
 
 document.getElementById('all-strings-radio').addEventListener('click', () => {
     maxString = 6;
