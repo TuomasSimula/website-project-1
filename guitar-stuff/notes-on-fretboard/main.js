@@ -18,6 +18,12 @@ document.getElementById('5-fret-radio').addEventListener('click', () => {
     getRandNote();
 });
 
+document.getElementById('open-strings-radio').addEventListener('click', () => {
+    maxFret = 0;
+    document.getElementById('fretboard-5').style.display = 'inline';
+    document.getElementById('fretboard-12').style.display = 'none';
+    getRandNote();
+
 document.getElementById('all-strings-radio').addEventListener('click', () => {
     maxString = 6;
     getRandNote();
